@@ -1,0 +1,17 @@
+resources:
+  pipelines:
+    orders_sample_dlt:
+      name: orders_etl_sample_dlt
+      libraries:
+        - notebook:
+            path: ./src/pipelines/orders_dlt.py
+      schema: smil_schema
+      continuous: false
+      photon: true
+      channel: CURRENT
+      catalog: smil_catalog
+      serverless: true
+
+
+
+
