@@ -11,4 +11,4 @@ targets:
 
 
 include:
-  - resources/pipelines/*.yaml 
+  - ./resources/pipelines/*.yaml 
