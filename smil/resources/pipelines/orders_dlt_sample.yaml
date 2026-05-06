@@ -2,16 +2,12 @@ resources:
   pipelines:
     orders_sample_dlt:
       name: orders_etl_sample_dlt
-      libraries:
-        - notebook:
-            path: ../../src/pipelines/sample_orders_dlt/transformations/orders_dlt.py
-      schema: smil_schema
-      continuous: false
-      photon: true
-      channel: CURRENT
       catalog: smil_catalog
+      schema: smil_schema
       serverless: true
-
-
-
-
+      photon: true
+      continuous: false
+      channel: CURRENT
+      libraries:
+        - file:
+            path: ../../src/pipelines/sample_orders_dlt/transformations/orders_dlt.py
