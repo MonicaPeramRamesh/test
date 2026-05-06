@@ -5,10 +5,9 @@ targets:
   dev:
     mode: development
     default: true
-    workspace: 
+    workspace:
       host: https://dbc-436077ac-8e41.cloud.databricks.com
-      root_path: /Workspace/Shared/pipelines/${bundle.name}/${bundle.target}
-
+      root_path: ~/Workspace/Shared/pipelines/${bundle.name}/${bundle.target}
 
 include:
-  - ./resources/pipelines/*.yaml 
+  - ./resources/pipelines/*.yaml
