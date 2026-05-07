@@ -1,6 +1,6 @@
 import dlt
-from pyspark.sql import functions as F
 from pyspark.sql.types import StructType, StructField, StringType, IntegerType, DoubleType
+from transformations import transform_orders
 
 @dlt.table(
     name="orders_raw",
@@ -22,19 +22,9 @@ def orders_raw():
             .load("/Volumes/smil_catalog/smil_schema/smil_volume/orders.csv")
     )
 
-
 @dlt.table(
     name="orders_gold",
     comment="Cleaned and transformed orders data"
 )
 def orders_gold():
-    return (
-        dlt.read("orders_raw")
-            .fillna({"quantity": 0, "price": 0.0})
-            .withColumn("total_amount",
-                F.col("quantity") * F.col("price"))
-            .withColumn("order_grade",
-                F.when(F.col("total_amount") > 1500, "High")
-                 .when(F.col("total_amount") > 500, "Medium")
-                 .otherwise("Low"))
-    )
+    return transform_orders(dlt.read("orders_raw"))  ← one line! ✅

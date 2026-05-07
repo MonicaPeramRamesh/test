@@ -1,0 +1,18 @@
+# Virtual environment
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Coverage
+.coverage
+
+# Databricks
+.databricks/
+.databrickscfg
+
+# IDE
+.vscode/
+.idea/
