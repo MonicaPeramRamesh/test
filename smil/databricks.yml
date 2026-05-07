@@ -3,7 +3,7 @@ bundle:
 
 targets:
   dev:
-    mode: development
+    mode: production
     default: true
     workspace:
       host: https://dbc-436077ac-8e41.cloud.databricks.com
