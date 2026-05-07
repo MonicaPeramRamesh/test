@@ -53,13 +53,6 @@ stages:
             inputs:
               versionSpec: '3.10'
 
-          - powershell: |
-              $url = "https://github.com/databricks/cli/releases/latest/download/databricks_windows_amd64.zip"
-              Invoke-WebRequest -Uri $url -OutFile "databricks.zip"
-              Expand-Archive -Path "databricks.zip" -DestinationPath "$env:USERPROFILE\databricks-cli" -Force
-              Write-Host "##vso[task.setvariable variable=PATH]$env:USERPROFILE\databricks-cli;$env:PATH"
-            displayName: 'Install Databricks CLI'
-
           - script: pip install -r requirements.txt
             displayName: 'Install dependencies'
             workingDirectory: $(System.DefaultWorkingDirectory)/smil
