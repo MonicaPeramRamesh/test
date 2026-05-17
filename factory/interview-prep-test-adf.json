@@ -1,0 +1,15 @@
+{
+	"name": "interview-prep-test-adf",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Enabled",
+			"editable": true
+		}
+	},
+	"location": "northeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "59273e69-3151-4b0d-b471-3fc306b671b5",
+		"tenantId": "0d5139e1-d30d-4d50-9135-b25de774bb6c"
+	}
+}
